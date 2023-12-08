@@ -4,7 +4,7 @@
 
 import random
 import time
-import art
+from art import *
 
 #variable pour recommencer le jeu
 retry = "o"
@@ -145,7 +145,13 @@ while retry == "o":
         #Si le joueur a entre 0 et 3 clés : ça continue
         elif nb_clés>=0:
             time.sleep(1)
-            print(f"Tu as {nb_clés} clés !")
+            if nb_clés == 0 :
+                print(f"Attention ! Tu n'as plus de clé, tu n'as plus le droit à l'erreur !")
+            elif nb_clés == 1 :
+                print(f"Tu as {nb_clés} clé !")
+            else:
+                print(f"Tu as {nb_clés} clés !")
+            time.sleep(1)
 
         #Si le joueur perd une clé alors qu'il n'en avait pas : Défaite 
         else:
